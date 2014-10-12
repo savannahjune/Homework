@@ -7,7 +7,7 @@ call.py - Telemarketing script that displays the next name
           We only want to call customers that have placed
           an order of over 20 Watermelons.
 
-"""
+""" 
 
 # Load the customers from the passed filename
 # Return a dictionary containing the customer data

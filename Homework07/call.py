@@ -88,9 +88,12 @@ def main():
 			customer = customers.get(order.get('customer_id', 0), 0)
 			if customer.get('called', '') == '':
 				display_customer(customer)
-			else: 
-				customer.get('called', 'yes')
-				continue
+				ask_if_called = raw_input("Did you call them? Y/N?")
+				if ask_if_called == 'Y':
+					customer.get('called', 'yes')
+				else:
+					customer.get('called', 'no')
+	print customer
 
 if __name__ == '__main__':
 	main()

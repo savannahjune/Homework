@@ -83,11 +83,14 @@ def main():
 	for order in orders:
 		# Is this order over 20 watermelon?
 		if order.get('num_watermelons', 0) > 20:
+			customer = customers.get(order.get('customer_id', 0), 0)
 			# Has this customer not been contacted yet?
 			customer = customers.get(order.get('customer_id', 0), 0)
 			if customer.get('called', '') == '':
 				display_customer(customer)
-				break
+			else: 
+				customer.get('called', 'yes')
+				continue
 
 if __name__ == '__main__':
 	main()
